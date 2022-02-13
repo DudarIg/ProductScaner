@@ -155,18 +155,5 @@ class MainActivity : AppCompatActivity() {
         return selfPermission == PackageManager.PERMISSION_GRANTED
     }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-    ) {
-        if (requestCode == REQUEST_CAMERA_PERMISSION) {
-            if (isCameraPermissionGranted()) {
-                previewView.post { startCamera() }
-            } else {
-                Toast.makeText(this, "Camera permission is required.", Toast.LENGTH_SHORT).show()
-                finish()
-            }
-        }
-    }
+
 }
